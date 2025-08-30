@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> QUICK QUIZ - Interactive Learning Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
+</head>
+<body>
+    <div class="background-blob"></div>
+    <div class="background-blob"></div>
+
+    <div class="glass-container">
+        <!-- Home Screen -->
+        <div class="home-screen">
+            <div class="header">
+                <h1>QIUCK QUIZ</h1>
+                <p>Challenge your knowledge across multiple domains with our interactive quiz platform</p>
+            </div>
+
+            <div class="categories-grid">
+                <div class="category-card" onclick="startQuiz('programming')">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Programming</h3>
+                    <p>Test your coding knowledge with questions about algorithms, data structures, and programming languages</p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+
+                <div class="category-card" onclick="startQuiz('history')">
+                    <div class="category-icon">
+                        <i class="fas fa-landmark"></i>
+                    </div>
+                    <h3>Indian History</h3>
+                    <p>Explore the rich heritage of India with questions about ancient civilizations, empires, and freedom struggle</p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+
+                <div class="category-card" onclick="startQuiz('general')">
+                    <div class="category-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>General Knowledge</h3>
+                    <p>Broaden your horizons with questions about science, geography, and current affairs from around the world</p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+
+                <div class="category-card" onclick="startQuiz('math')">
+                    <div class="category-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                    <h3>Simple Math</h3>
+                    <p>Sharpen your mathematical skills with arithmetic, algebra, and logical reasoning questions</p>
+                    <button class="start-btn">Start Quiz</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div class="quiz-container" id="quizContainer">
+            <div class="question-counter" id="questionCounter">
+                Question 1 of 10
+            </div>
+            <div class="timer" id="timer">Time: 30s</div>
+
+            <div class="question-card">
+                <div class="question-text" id="questionText">
+                    Loading question...
+                </div>
+                <div class="options-grid" id="optionsGrid">
+                    <!-- Options will be populated here -->
+                </div>
+            </div>
+
+            <div class="navigation">
+                <button class="nav-btn" id="prevBtn" onclick="previousQuestion()" disabled>
+                    <i class="fas fa-arrow-left"></i> Previous
+                </button>
+                <div class="score-display" id="scoreDisplay">
+                    Score: 0
+                </div>
+                <button class="nav-btn" id="nextBtn" onclick="nextQuestion()">
+                    Next <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Results Screen -->
+        <div class="results-container" id="resultsContainer">
+            <h2>Quiz Completed!</h2>
+            <div class="score-circle" id="finalScore">
+                0/10
+            </div>
+            <div class="result-message" id="resultMessage">
+                Great effort!
+            </div>
+            <p id="resultDetails">You answered 0 out of 10 questions correctly</p>
+            <button class="restart-btn" onclick="restartQuiz()">
+                <i class="fas fa-redo"></i> Try Another Quiz
+            </button>
+        </div>
+    </div>
+</body>
+</html>
+
